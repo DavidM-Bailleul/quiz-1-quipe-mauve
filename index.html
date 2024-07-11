@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quiz sur la voix mystère</h1>
+  <p>À qui est cette voix ?</p>
+  <form onsubmit="return false;">
+    <input type="text" id="reponse" placeholder="Entrez votre réponse">
+    <button onclick="verifierReponse()">Vérifier</button>
+  </form>
+  <p id="message"></p>
+
+  <script>
+    function verifierReponse() {
+      var reponse = document.getElementById("reponse").value.trim().toLowerCase();
+      var message = document.getElementById("message");
+
+      if (reponse === "louison") {
+        message.textContent = "Indice: musée";
+      } else {
+        message.textContent = "Réponse incorrecte. Essayez encore.";
+      }
+    }
+  </script>
+</body>
+</html>
